@@ -11,7 +11,6 @@ window.addEventListener("load", function () {
   });
 });
 
-// Save notes to localStorage
 function saveNotesToLocalStorage() {
   const notes = Array.from(savedNotesContainer.querySelectorAll("li")).map((li) => ({
     title: li.querySelector(".note-title").textContent,
@@ -20,7 +19,6 @@ function saveNotesToLocalStorage() {
   localStorage.setItem("notes", JSON.stringify(notes));
 }
 
-// Create and append a note element
 function createNoteElement(title, content) {
   const li = document.createElement("li");
   li.dataset.content = content;
@@ -37,7 +35,6 @@ function createNoteElement(title, content) {
     </div>
   `;
 
-  // Add event listeners
   li.querySelector(".fa-trash").addEventListener("click", function () {
     li.remove();
     saveNotesToLocalStorage();
@@ -62,7 +59,6 @@ function createNoteElement(title, content) {
   savedNotesContainer.appendChild(li);
 }
 
-// Add a new note
 addBtn.addEventListener("click", function () {
   const title = prompt("Enter title here:");
 
@@ -74,7 +70,6 @@ addBtn.addEventListener("click", function () {
   }
 });
 
-// Save the active note's content
 saveBtn.addEventListener("click", function () {
   if (activeNote) {
     const noteContent = document.querySelector(".note textarea").value;
@@ -82,12 +77,11 @@ saveBtn.addEventListener("click", function () {
     activeNote.querySelector(".preview").textContent = `${noteContent.substring(0, 30)}...`;
 
     saveNotesToLocalStorage();
-    document.querySelector(".note textarea").value = ""; // Optional: Clear textarea after saving
+    document.querySelector(".note textarea").value = "";
     activeNote.classList.remove("active-note");
     activeNote = null;
     saveBtn.disabled = true;
   }
 });
 
-// Disable save button initially
 saveBtn.disabled = true;
