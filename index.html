@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spark</title>
+    <link rel="stylesheet" href="/main.css" />
+  </head>
+  <body>
+    <div class="note-app">
+      <div class="note-list">
+        <button id="addBtn">
+          <i class="fa-solid fa-plus"></i>
+          Add Note
+        </button>
+        <div id="saved-notes">
+          <ul>
+            <!-- <li>saved items<i class="fa-solid fa-trash"></i></li>
+            <li>saved items<i class="fa-solid fa-trash"></i></li>
+            <li>saved items<i class="fa-solid fa-trash"></i></li>
+            <li>saved items<i class="fa-solid fa-trash"></i></li> -->
+          </ul>
+        </div>
+      </div>
+      <div id="main">
+        <div class="note">
+          <div class="tool">
+            <div class="icons">
+              <i class="fa-solid fa-rotate-left"></i>
+              <i class="fa-solid fa-rotate-right"></i>
+              <i class="fa-solid fa-save"></i>
+              <i class="fa-solid fa-trash"></i>
+            </div>
+            <div class="format-overlay">
+              <button id="formatOverlay" class="format-btn">Format</button>
+              <div class="overlay">
+                <div class="overlay-content">
+                  <span class="close-button" id="closeOverlay">&times;</span>
+                  <h2>Formatting Tools</h2>
+                  <div class="format-section">
+                    <label for="font-size-slider">Font Size:</label>
+                    <input type="range" id="font-size-slider" min="10" max="50" value="24" />
+                    <span id="font-size-value">24px</span>
+                  </div>
+                  <div class="format-section">
+                    <label>Alignment:</label>
+                    <div class="alignment-options">
+                      <button class="align-btn" data-align="left"><i class="fa-solid fa-align-left"></i></button>
+                      <button class="align-btn" data-align="center"><i class="fa-solid fa-align-center"></i></button>
+                      <button class="align-btn" data-align="right"><i class="fa-solid fa-align-right"></i></button>
+                      <button class="align-btn" data-align="justify"><i class="fa-solid fa-align-justify"></i></button>
+                    </div>
+                  </div>
+                  <div class="format-section">
+                    <label for="text-color">Text Color:</label>
+                    <input type="color" id="text-color" value="#000000" />
+                  </div>
+                  <div class="format-section">
+                    <label for="font-type">Fonts</label>
+                    <select id="font-type">
+                      <option value="Arial">Arial</option>
+                      <option value="Georgia">Georgia</option>
+                      <option value="Times New Roman">Times New Roman</option>
+                      <option value="Courier New">Courier New</option>
+                      <option value="Verdana">Verdana</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <textarea placeholder="Lets write something..."></textarea>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://kit.fontawesome.com/d1e470b967.js" crossorigin="anonymous"></script>
+    <script src="/script.js"></script>
+  </body>
+</html>
