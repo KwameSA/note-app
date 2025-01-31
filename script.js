@@ -77,10 +77,21 @@ saveBtn.addEventListener("click", function () {
     activeNote.querySelector(".preview").textContent = `${noteContent.substring(0, 30)}...`;
 
     saveNotesToLocalStorage();
-    document.querySelector(".note textarea").value = "";
+    document.querySelector(".note textarea").value = ""; 
     activeNote.classList.remove("active-note");
     activeNote = null;
     saveBtn.disabled = true;
+  } else {
+    const title = prompt("Enter title here:");
+    const noteContent = document.querySelector(".note textarea").value;
+
+    if (title && title.trim() !== "") {
+      createNoteElement(title.trim(), noteContent); 
+      saveNotesToLocalStorage(); 
+      document.querySelector(".note textarea").value = "";
+    } else {
+      alert("Note title cannot be empty.");
+    }
   }
 });
 
