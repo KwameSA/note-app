@@ -83,25 +83,34 @@ body {
   background-color: rgba(0, 0, 0, 0.05);
 }
 
-.tool {
+.tool,
+.formats {
   background-color: black;
   color: blanchedalmond;
   padding: 10px;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
   gap: 20px;
   width: 100%;
 }
 
-.icons {
+.icons-tools {
   display: flex;
   justify-content: center;
   gap: 10px;
   flex-grow: 1;
 }
 
-.tool i {
+.icons-format {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  flex-grow: 1;
+}
+
+.tool i,
+.formats i {
   cursor: pointer;
 }
 
@@ -124,6 +133,10 @@ body {
 
 .note-header {
   font-size: 1.2em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
 }
 
 .note-body {
@@ -140,6 +153,7 @@ body {
 
 .note-buttons {
   display: flex;
+  justify-content: flex-end;
   flex-direction: row;
   gap: 5px;
 }
@@ -165,16 +179,18 @@ body {
 }
 
 /* Overlay styles */
-.overlay {
+.format,
+.toolbar {
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.8);
-  display: none;
   justify-content: center;
   align-items: center;
+  animation: fadeIn 0.5s ease forwards;
   z-index: 1000;
 }
 
@@ -182,41 +198,28 @@ body {
   background-color: white;
   padding: 20px;
   border-radius: 10px;
-  width: 90%;
-  max-width: 500px;
+  width: 300px;
+  position: relative;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-.overlay-content h2 {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.overlay {
-  animation: fadeIn 0.5s ease forwards;
-}
-
-.close-btn {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  font-size: 30px;
-  cursor: pointer;
-  color: white;
 }
 
 /* Section styling inside the overlay */
 .format-section {
-  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
 }
 
-.format-section:last-child {
-  margin-bottom: 0;
+.format-section label {
+  font-size: 16px;
+  margin-bottom: 5px;
 }
 
 .alignment-options {
   display: flex;
   justify-content: space-between;
+  gap: 10px;
 }
 
 .align-btn {
@@ -246,16 +249,22 @@ li {
 }
 
 .note-list::-webkit-scrollbar-track {
-  background: #f1f1f1; 
+  background: #f1f1f1; /* Light background for track */
   border-radius: 10px;
 }
 
 .note-list::-webkit-scrollbar-thumb {
-  background: #888; 
+  background: #888; /* Darker thumb background */
   border-radius: 10px;
-  border: 3px solid blueviolet; 
+  border: 3px solid blueviolet; /* Adds space between the thumb and track */
 }
 
 .note-list::-webkit-scrollbar {
-  width: 10px; 
+  width: 10px; /* Adjust the width of the scrollbar */
+}
+
+#fontType {
+  border-radius: 5px;
+  padding: 5px;
+  text-align: center;
 }
