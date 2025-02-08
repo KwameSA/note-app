@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Spark</title>
-    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="/main.css" />
   </head>
   <body>
     <div class="note-app">
@@ -24,52 +24,48 @@
       </div>
       <div id="main">
         <div class="note">
-          <div class="tool">
-            <div class="icons">
-              <i class="fa-solid fa-rotate-left"></i>
-              <i class="fa-solid fa-rotate-right"></i>
-              <i class="fa-solid fa-save"></i>
-              <i class="fa-solid fa-trash"></i>
+          <div class="tool" id="toolSection">
+            <div class="icons-tools">
+              <i class="fa-solid fa-rotate-left" id="undoBtn" title="Undo"></i>
+              <i class="fa-solid fa-save" id="saveButton" title="Save"></i>
+              <i class="fa-solid fa-rotate-right" id="redoBtn" title="Redo"></i>
             </div>
-            <div class="format-overlay">
-              <button id="formatOverlay" class="format-btn">Format</button>
-              <div class="overlay">
-                <div class="overlay-content">
-                  <span class="close-button" id="closeOverlay">&times;</span>
-                  <h2>Formatting Tools</h2>
-                  <div class="format-section">
-                    <label for="font-size-slider">Font Size:</label>
-                    <input type="range" id="font-size-slider" min="10" max="50" value="24" />
-                    <span id="font-size-value">24px</span>
-                  </div>
-                  <div class="format-section">
-                    <label>Alignment:</label>
-                    <div class="alignment-options">
-                      <button class="align-btn" data-align="left"><i class="fa-solid fa-align-left"></i></button>
-                      <button class="align-btn" data-align="center"><i class="fa-solid fa-align-center"></i></button>
-                      <button class="align-btn" data-align="right"><i class="fa-solid fa-align-right"></i></button>
-                      <button class="align-btn" data-align="justify"><i class="fa-solid fa-align-justify"></i></button>
-                    </div>
-                  </div>
-                  <div class="format-section">
-                    <label for="text-color">Text Color:</label>
-                    <input type="color" id="text-color" value="#000000" />
-                  </div>
-                  <div class="format-section">
-                    <label for="font-type">Fonts</label>
-                    <select id="font-type">
-                      <option value="Arial">Arial</option>
-                      <option value="Georgia">Georgia</option>
-                      <option value="Times New Roman">Times New Roman</option>
-                      <option value="Courier New">Courier New</option>
-                      <option value="Verdana">Verdana</option>
-                    </select>
-                  </div>
+            <button id="showFormatTools" class="format-btn">Format</button>
+          </div>
+          <div class="formats" id="formatSection" style="display: none">
+            <div class="icons-format">
+              <div class="format-section">
+                <label for="font-type">Fonts</label>
+                <select id="fontType">
+                  <option value="Arial">Arial</option>
+                  <option value="Georgia">Georgia</option>
+                  <option value="Times New Roman">Times New Roman</option>
+                  <option value="Courier New">Courier New</option>
+                  <option value="Verdana">Verdana</option>
+                </select>
+              </div>
+              <div class="format-section">
+                <label for="font-size-slider">Font Size</label>
+                <input type="range" id="fontSizeSlider" min="10" max="50" value="24" />
+                <span id="fontSizeValue">24px</span>
+              </div>
+              <div class="format-section">
+                <label>Alignment</label>
+                <div class="alignment-options" id="alignmentOptions">
+                  <button class="align-btn" data-align="left"><i class="fa-solid fa-align-left"></i></button>
+                  <button class="align-btn" data-align="center"><i class="fa-solid fa-align-center"></i></button>
+                  <button class="align-btn" data-align="right"><i class="fa-solid fa-align-right"></i></button>
+                  <button class="align-btn" data-align="justify"><i class="fa-solid fa-align-justify"></i></button>
                 </div>
               </div>
+              <div class="format-section">
+                <label for="text-color">Text Color</label>
+                <input type="color" id="textColor" value="#000000" />
+              </div>
             </div>
+            <button id="hideFormatTools" class="format-btn">Back</button>
           </div>
-          <textarea placeholder="Lets write something..."></textarea>
+          <textarea id="noteArea" placeholder="Lets write something..."></textarea>
         </div>
       </div>
     </div>
