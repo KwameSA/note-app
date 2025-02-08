@@ -127,10 +127,10 @@ function createNoteElement(title, content) {
 
 function saveNote() {
   const content = noteArea.value;
-  if (content.trim() === "") {
-    alert("Note content cannot be empty.");
-    return;
-  }
+  // if (content.trim() === "") {
+  //   alert("Note content cannot be empty.");
+  //   return;
+  // }
   let title;
 
   if (activeNote) {
@@ -218,9 +218,9 @@ textColor.addEventListener("input", () => {
 });
 
 noteArea.addEventListener("input", () => {
-  clearTimeout(autoSaveTimeout);
-  autoSaveTimeout = setTimeout(saveNote, 1000);
-  saveBtn.disabled = false;
+  undoStack.push(captureNoteState());
+  redoStack = [];
+  saveNote();
 });
 
 undoBtn.addEventListener("click", () => {
