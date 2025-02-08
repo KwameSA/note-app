@@ -1,4 +1,4 @@
-# Notes App
+# Spark Notes App
 
 A simple and feature-rich notes application built using HTML, CSS, and JavaScript. This app allows users to create, edit, delete, and save notes, with rich text formatting options such as font size, color, text alignment, and more. The application is designed to be easy to use and is fully responsive.
 
@@ -15,7 +15,7 @@ A simple and feature-rich notes application built using HTML, CSS, and JavaScrip
 - **Local Storage**: Notes are saved and retrieved from the browser's local storage, ensuring data persistence even after the page is refreshed.
   
 ## Use
-Visit - 
+Visit - https://kwamesa.github.io/note-app/
 
 
 ## Technologies Used
